@@ -6,6 +6,11 @@ import WaveSkeleton from '@/wave-skeleton.vue'
 	<div class="layout">
 		<WaveSkeleton />
 		<WaveSkeleton />
+		<WaveSkeleton />
+		<WaveSkeleton />
+		<WaveSkeleton />
+		<WaveSkeleton />
+		<WaveSkeleton />
 	</div>
 </template>
 
@@ -33,7 +38,37 @@ body,
 }
 
 .wave-skeleton {
-	height: 60px;
-	width: 200px;
+	// background: rgba($color: #000000, $alpha: 0.1);
+	// margin: 5px 0;
+	&:nth-child(1) {
+		width: 380px;
+		height: 30px;
+	}
+	&:nth-child(2) {
+		width: 240px;
+		height: 30px;
+	}
+	&:nth-child(3) {
+		width: 160px;
+		height: 30px;
+	}
+
+	&:nth-child(4) {
+		width: 200px;
+		height: 50px;
+	}
+	&:nth-child(5) {
+		width: 380px;
+		height: 50px;
+	}
+
+	&:nth-child(6) {
+		width: 200px;
+		height: 24px;
+	}
+	&:nth-child(7) {
+		width: 380px;
+		height: 24px;
+	}
 }
 </style>
