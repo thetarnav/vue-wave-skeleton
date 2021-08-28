@@ -10,6 +10,9 @@ import {
 
 export default defineComponent({
 	name: 'WaveSkeleton',
+	props: {
+		transitionName: { type: String, default: 'wave-skeleton-transition' },
+	},
 	setup() {
 		const pathEl = templateRef('pathEl')
 		const divEl = templateRef('divEl')
@@ -53,11 +56,13 @@ export default defineComponent({
 </script>
 
 <template>
-	<div ref="divEl" class="wave-skeleton">
-		<svg :viewBox="`5 15 ${viewBoxWidth} 30`">
-			<path ref="pathEl" :d="path"></path>
-		</svg>
-	</div>
+	<transition :name="transitionName" appear>
+		<div ref="divEl" class="wave-skeleton">
+			<svg :viewBox="`5 15 ${viewBoxWidth} 30`">
+				<path ref="pathEl" :d="path"></path>
+			</svg>
+		</div>
+	</transition>
 </template>
 
 <style lang="scss">
@@ -68,14 +73,15 @@ export default defineComponent({
 		height: 100%;
 		margin: 0;
 		overflow: hidden;
-		animation: wave-skeleton-fade 800ms infinite alternate;
+		animation: var(--wave-skeleton-animation, wave-skeleton-fade) 800ms 700ms
+			infinite alternate;
 	}
 
 	path {
 		fill: none;
-		stroke: #828282;
-		stroke-width: 5.2px;
-		stroke-linecap: round;
+		stroke: var(--wave-skeleton-color, #828282);
+		stroke-width: var(--wave-skeleton-stroke-width, 5.2px);
+		stroke-linecap: var(--wave-skeleton-stroke-linecap, round);
 		stroke-dasharray: 0 16 v-bind(strokeDashLength) 16;
 		animation: wave-skeleton-wave 2400ms linear infinite;
 	}
@@ -98,6 +104,17 @@ export default defineComponent({
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+.wave-skeleton-transition {
+	&-enter-active,
+	&-leave-active {
+		transition: opacity 500ms 200ms;
+	}
+	&-enter-from,
+	&-leave-to {
+		opacity: 0;
 	}
 }
 </style>
