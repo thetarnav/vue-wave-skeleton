@@ -4,13 +4,20 @@ import WaveSkeleton from '@/wave-skeleton.vue'
 
 <template>
 	<div class="layout">
-		<WaveSkeleton />
-		<WaveSkeleton />
-		<WaveSkeleton />
-		<WaveSkeleton />
-		<WaveSkeleton />
-		<WaveSkeleton />
-		<WaveSkeleton />
+		<div class="header">
+			<WaveSkeleton class="title" />
+			<WaveSkeleton class="title smaller" />
+		</div>
+		<div class="content">
+			<WaveSkeleton />
+			<WaveSkeleton />
+			<WaveSkeleton class="smaller" />
+			<WaveSkeleton class="note" />
+		</div>
+		<div class="content">
+			<WaveSkeleton />
+			<WaveSkeleton class="smaller" />
+		</div>
 	</div>
 </template>
 
@@ -37,38 +44,28 @@ body,
 	align-items: flex-start;
 }
 
+.content {
+	margin-top: 20px;
+}
+
 .wave-skeleton {
-	// background: rgba($color: #000000, $alpha: 0.1);
-	// margin: 5px 0;
-	&:nth-child(1) {
-		width: 380px;
-		height: 30px;
-	}
-	&:nth-child(2) {
-		width: 240px;
-		height: 30px;
-	}
-	&:nth-child(3) {
-		width: 160px;
-		height: 30px;
-	}
+	width: 260px;
+	height: 30px;
 
-	&:nth-child(4) {
-		width: 200px;
-		height: 50px;
-	}
-	&:nth-child(5) {
-		width: 380px;
+	&.title {
+		width: 280px;
 		height: 50px;
 	}
 
-	&:nth-child(6) {
-		width: 200px;
+	&.note {
+		width: 220px;
 		height: 24px;
+		margin-top: 20px;
+		margin-left: 20px;
 	}
-	&:nth-child(7) {
-		width: 380px;
-		height: 24px;
+
+	&.smaller {
+		width: 130px;
 	}
 }
 </style>

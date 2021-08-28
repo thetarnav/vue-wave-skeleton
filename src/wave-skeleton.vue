@@ -73,8 +73,8 @@ export default defineComponent({
 		height: 100%;
 		margin: 0;
 		overflow: hidden;
-		animation: var(--wave-skeleton-animation, wave-skeleton-fade) 800ms 700ms
-			infinite alternate;
+		animation: var(--wave-skeleton-animation, wave-skeleton-fade)
+			var(--wave-skeleton-duration, 800ms) 700ms infinite alternate;
 	}
 
 	path {
