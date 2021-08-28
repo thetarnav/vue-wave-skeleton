@@ -2,7 +2,7 @@
 
 Animated skeleton component for **Vue 3**, by moving svg wave with constant **chill animation**. A cool way to show that the text content of your page is loading, an alternative to the boring, typical skeletons.
 
-![wave](https://user-images.githubusercontent.com/24491503/131225504-f97ca108-27c4-47fc-a089-e2e672618218.gif)
+[![wave](https://user-images.githubusercontent.com/24491503/131225504-f97ca108-27c4-47fc-a089-e2e672618218.gif)](https://www.npmjs.com/package/vue-wave-skeleton)
 
 <!-- See the [DEMO](https://vue-hcyeqk.stackblitz.io) on StackBlitz. -->
 
